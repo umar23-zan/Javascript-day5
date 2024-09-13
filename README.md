@@ -235,3 +235,224 @@ Error: cost cannot be less than $0
   </body>
 </html>
 ```
+
+## Arrays And Loops
+
+a. Create an array of numbers: const nums = [10, 20, 30]; Modify the last value in this array and change it to 99.
+```
+const nums=[10, 20, 30];
+nums[2]=99;
+console.log(nums);
+```
+11b. Create a function getLastValue(array) that takes an array and returns the last value in the array. Hint: array indexes start at 0 so the last index is the number of values in the array minus 1 (lastIndex = array.length - 1).
+• getLastValue([1, 20, 22, 24, 5]) => 5
+• getLastValue(['hi', 'hello', 'good']) => 'good'
+```
+function getLastValue(array){
+let lastIndex=array.length-1;
+return array[lastIndex];
+}
+console.log(getLastValue([1, 20, 22, 24, 5]));
+console.log(getLastValue(['hi', 'hello', 'hey']));
+</script>
+```
+c. Create a function arraySwap(array) that takes an array and returns an array where the first and last values are swapped (or switched). [5, 20, 22, 24, 1]
+• arraySwap([1, 20, 22, 24, 5]) => • arraySwap(['hi', 'hello', 'good']) => ['good', 'hello', 'hi']
+```
+function arraySwap(array){
+let lastIndex=array[array.length-1];
+let fvalue=array[0];
+let lvalue=array[lastIndex];
+
+array[0]=lvalue;
+array[lastIndex]=fvalue;
+return array;
+}
+console.log(arraySwap([1, 20, 22, 24, 5]));
+console.log(arraySwap(['hi', 'hello', 'good']));
+</script>
+```
+d. Create a for loop that counts up from 0 to 10, but counts up by 2 (0, 2, 4, ..., 8, 10).
+```
+let i=0;
+for(i=0;i<=10;i++){
+if(i%2==0)
+console.log(i);
+}
+```
+e. Create a for loop that counts down from 5 to 0.
+```
+for(let i=5;i!==-1;i--){
+console.log(i);
+```
+f. Do exercises 11d and 11e, but using while loops.
+```
+while(i<=10){
+if(i%2==0)
+console.log(i);
+i++;
+
+let i=5
+while(i!==-1){
+
+console.log(i);
+i--;
+}
+```
+11g. Create a loop that takes an array of numbers and creates a new array where each number is increased by 1.
+• [1, 2, 3] => [2, 3, 4]
+```
+<script>
+const array=[1, 2, 3];
+const array2=[];
+for(let i=0;i<array.length;i++){
+array2.push(array[i]+1);
+}
+console.log(array2);
+</script>
+```
+h. Create a function addOne(array) that takes an array of numbers and returns an array where each number is increased by 1.
+• addOne([1, 2, 3]) => [2, 3, 4]
+• addOne([-2, -1, 0, 99]) => [-1, 0, 1, 100]
+```
+<script>
+function addNum(array){
+const array2=[];
+for(let i=0;i<array.length;i++){
+array2.push(array[i]+1);
+}
+return array2;
+}
+console.log(addNum([1, 2, 3]));
+console.log(addNum([-2, -1, 0, 99]));
+</script>
+```
+i. Create a function addNum(array, num) that takes an array of numbers and returns an array where each number is increased by 'num'.
+
+• addNum([1, 2, 3], 2) => [3, 4, 5]
+
+• addNum([1, 2, 3), 3) => [4, 5, 6]
+
+• addNum([-2, -1, 0, 99], 2) => [0, 1, 2, 101]
+```
+<script>
+function addNum(array, num){
+const array2=[];
+for(let i=0;i<array.length;i++){
+array2.push(array[i]+num);
+}
+return array2;
+}
+console.log(addNum([1, 2, 3], 2));
+console.log(addNum([1, 2, 3], 3));
+</script>
+```
+j. Create a function addArrays(arrayı, array2) that takes 2 arrays of numbers and adds each number in the arrays together.
+
+• addArrays([1, 1, 2], [1, 1, 3]) => [2, 2, 5]
+
+• addArrays([1, 2, 3], [4, 5, 6]) => [5, 7, 9]
+```
+<script>
+function addNum(array, array3){
+const array2=[];
+for(let i=0;i<array.length;i++){
+array2.push(array[i]+array3[i]);
+}
+return array2;
+}
+console.log(addNum([1, 2, 3], [1, 2, 3]));
+console.log(addNum([1, 2, 3], [4, 5, 6]));
+</script>
+```
+k. Create a function countPositive(nums) that takes an array of numbers and returns how many numbers in the array are greater than 0.
+
+• countPositive([1, -3, 5]) => 2
+
+• countPositive([-2, 3, -5, 7, 10]) => 3
+```
+<script>
+function addNum(num){
+let count=0
+for(let i=0;i<num.length;i++){
+if(num[i]>0)
+count+=1;
+}
+return count;
+}
+console.log(addNum([1, -2, 3]));
+console.log(addNum([1, 2, -3, 4, -5, 6]));
+</script>
+```
+l. Create a function minMax(nums) that takes an array of numbers and returns an object with the minimum and maximum numbers in the array (do this using a loop instead of using something like Math.min).
+
+• minMax([1, -3, 5]) => { min: -3, max: 5 }
+
+• minMax([-2, 3, 5, 7, 10]) => { min: -5, max: 10 }
+```
+<script>
+      let count={
+          min: 0,
+          max: 0
+        };
+      function addNum(num){
+      for(let i=0;i<num.length;i++){
+        if(num[i]>0)
+        count.max+=1;
+        else
+        count.min+=1;
+      }
+      return count;
+    }
+      console.log(addNum([1, -2, 3]));
+      console.log(addNum([1, 2, -3, 4, -5, 6]));
+    </script>
+```
+m. Update exercise 111 to also handle these cases:
+
+• minMax([]) => { min: null, max: null }
+
+• minMax([3]) => { min: 3, max: 3 }
+```
+<script>
+    
+      function addNum(num){
+        let count={
+          min: num[0],
+          max: num[0]
+        };
+      for(let i=0;i<num.length;i++){
+        const value=num[i];
+        if(value<count.min){
+          count.min=value;
+        }
+        if(value>num.max){
+          num.max=value;
+        }
+     
+    }
+    return count;
+  }
+      console.log(addNum([1, -2, 3]));
+      console.log(addNum([1, 2, -3, 4, -5, 6]));
+    </script>
+```
+n. Create a function countWords(words) that takes an array of strings and returns an object with how many times each string appeared. • countWords(['apple', 'grape', 'apple', 'apple']) => { apple: 3, grape:1} (Hint: you can access a property using a variable: object[variable]; This uses the value inside the variable as the property name).
+```
+function countWords(words) {
+  const result = {};
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (!result[word]) {
+      result[word] = 1;
+    } else {
+      result[word]++;
+    }
+  }
+
+  return result;
+}
+
+console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+```
