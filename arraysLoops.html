@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+  </head>
+  <body>
+    <script>
+    
+      function addNum(num){
+        let count={
+          min: num[0],
+          max: num[0]
+        };
+      for(let i=0;i<num.length;i++){
+        const value=num[i];
+        if(value<count.min){
+          count.min=value;
+        }
+        if(value>num.max){
+          num.max=value;
+        }
+     
+    }
+    return count;
+  }
+      console.log(addNum([1, -2, 3]));
+      console.log(addNum([1, 2, -3, 4, -5, 6]));
+    </script>
+    
+
+
+  </body>
+</html>
